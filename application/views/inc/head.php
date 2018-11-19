@@ -3,31 +3,31 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>IA-Monev | Dashboard</title>
+  <title>Kopma-RankUp | Dashboard</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   
   <!-- Bootstrap 3.3.7 -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE-2.4.0/bower_components/bootstrap/dist/css/bootstrap.min.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css') ?>">
   <!-- Font Awesome -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE-2.4.0/bower_components/font-awesome/css/font-awesome.min.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css') ?>">
   <!-- Ionicons -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE-2.4.0/bower_components/Ionicons/css/ionicons.min.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE/bower_components/Ionicons/css/ionicons.min.css') ?>">
   <!-- Theme style -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE-2.4.0/dist/css/AdminLTE.min.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE/dist/css/AdminLTE.min.css') ?>">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE-2.4.0/dist/css/skins/_all-skins.min.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE/dist/css/skins/_all-skins.min.css') ?>">
   <!-- Morris chart -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE-2.4.0/bower_components/morris.js/morris.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE/bower_components/morris.js/morris.css') ?>">
   <!-- jvectormap -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE-2.4.0/bower_components/jvectormap/jquery-jvectormap.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE/bower_components/jvectormap/jquery-jvectormap.css') ?>">
   <!-- Date Picker -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE-2.4.0/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE/bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') ?>">
   <!-- Daterange picker -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE-2.4.0/bower_components/bootstrap-daterangepicker/daterangepicker.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE/bower_components/bootstrap-daterangepicker/daterangepicker.css') ?>">
   <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE-2.4.0/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') ?>">
 
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

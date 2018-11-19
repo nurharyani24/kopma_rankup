@@ -52,9 +52,9 @@
     <!-- Logo -->
     <a href="<?php echo base_url().'dashboard'?>" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>I</b>A</span>
+      <span class="logo-mini"><b>K</b>R</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Innovative </b>Academy</span>
+      <span class="logo-lg"><b>Kopma </b>RankUp</span>
     </a>
     <!-- Header Navbar: style can be found in header.less -->
     <nav class="navbar navbar-static-top">
@@ -68,24 +68,24 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <?php if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'):?>
-              <img src="<?php echo base_url('upload/logo/admsup.png') ?>" class="user-image" alt="User Image" />
-              <?php elseif($this->session->userdata('akses')=='3'):?>
-                <img src="<?php echo base_url('upload/logo/'.$this->session->userdata('ses_img')) ?>" class="user-image" alt="User Image" />
+              <?php if($this->session->userdata('akses')=='1'):?>
+              <img src="<?php echo base_url('assets/logo/admsup.png') ?>" class="user-image" alt="User Image" />
+              <?php elseif($this->session->userdata('akses')=='2'):?>
+                <img src="<?php echo base_url('assets/logo/admsup.png') ?>" class="user-image" alt="User Image" />
         <?php endif;?>
-              <span class="hidden-xs"><?php echo $this->session->userdata('ses_name');?></span>
+              <span class="hidden-xs"><?php echo $this->session->userdata('ses_nama');?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-               <?php if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'):?>
-               <img src="<?php echo base_url('upload/logo/admsup.png') ?>" class="img-circle" alt="User Image" />
-               <?php elseif($this->session->userdata('akses')=='3'):?>
-                <img src="<?php echo base_url('upload/logo/'.$this->session->userdata('ses_img')) ?>" class="img-circle" alt="User Image" />
+               <?php if($this->session->userdata('akses')=='1'):?>
+               <img src="<?php echo base_url('assets/logo/admsup.png') ?>" class="img-circle" alt="User Image" />
+               <?php elseif($this->session->userdata('akses')=='2'):?>
+                <img src="<?php echo base_url('assets/logo/admsup.png') ?>" class="img-circle" alt="User Image" />
               <?php endif;?>  
 
                 <p style="color:#555F61">
-                  <span class="hidden-xs">Hello,<br><b><?php echo $this->session->userdata('ses_name');?></b></span>
+                  <span class="hidden-xs">Hello,<br><b><?php echo $this->session->userdata('ses_nama');?></b></span>
                 </p>
               </li>
               
