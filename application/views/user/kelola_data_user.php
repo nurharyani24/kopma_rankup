@@ -53,7 +53,7 @@ $this->load->view('inc/sidebar');
                     <td>$row[nak]</td>
                     <td>$row[name]</td>
                     <td><center>
-                      <a class='btn btn-success btn-xs' title='Edit Data' href='".base_url()."kelolapoin/detail_datauser/$row[id_du]'>
+                      <a class='btn btn-success btn-xs' title='Edit Data' href='".base_url()."keloladatauser/detail_datauser/$row[id_du]'>
                       <span class='glyphicon glyphicon-edit'></span></a>
                     </tr>";
                 $no++;
