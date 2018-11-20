@@ -33,16 +33,6 @@ $this->load->view('inc/sidebar');
           
           <div class="box-body">
 
-            <!-- Username -->
-            <div class="form-group">
-              <!-- label -->
-              <label for="inputUsername" class="col-sm-2 control-label">Username</label>
-              <!-- input -->
-              <div class="col-sm-9">
-                <input type="text" class="form-control" id="username" placeholder="Username" name="username">
-              </div>
-            </div>
-
             <!-- Form NAK -->
             <div class="form-group">
               <!-- label -->
@@ -63,6 +53,16 @@ $this->load->view('inc/sidebar');
               </div>
             </div>
 
+            <!-- Username -->
+            <div class="form-group">
+              <!-- label -->
+              <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+              <!-- input -->
+              <div class="col-sm-9">
+                <input type="text" class="form-control" id="username" placeholder="Username" name="username">
+              </div>
+            </div>
+            
             <!-- Form Password -->
             <div class="form-group">
               <!-- label -->
