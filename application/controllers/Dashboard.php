@@ -16,8 +16,6 @@ class Dashboard extends CI_Controller{
       $this->load->view('user/dashboard');
     }else{
       echo "Anda tidak berhak mengakses halaman ini";
+    }
   }
-
-
-}
 }

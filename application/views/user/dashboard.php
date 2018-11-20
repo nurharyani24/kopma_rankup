@@ -5,7 +5,6 @@ $this->load->view('inc/sidebar');
 ?>
 
 <!-- Content Header (Page header) -->
-    <!-- Main row -->
     <section class="content-header">
       <h1>
         Dashboard
@@ -31,7 +30,7 @@ $this->load->view('inc/sidebar');
 
   
 
-      
+      </div>
       <!-- /.row (main row) -->
 
     </section>
