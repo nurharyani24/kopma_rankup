@@ -19,15 +19,8 @@ class KelolaUser extends CI_Controller{
 
   public function tambah()
   {	
-    /*$where = array (
-      'sha1(id_member)' => $id,
-    );
-    $data['data'] = $this->Member_model->info($where)->row();*/
     if($this->session->userdata('akses')=='1'){
-      /*$data['univ'] = $this->Member_model->getUniv();
-      $data['startup'] = $this->StartupProfile_model->getStartupName();
-      $data['fak'] = $this->Member_model->getFakultas();*/
-    $this->load->view('admin/kelola_user_tambah'/*,$data*/);
+      $this->load->view('admin/kelola_user_tambah'/*,$data*/);
     }else{
       redirect('auth/logout');
     }

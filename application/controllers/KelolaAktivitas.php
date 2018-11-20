@@ -19,34 +19,38 @@ class KelolaAktivitas extends CI_Controller{
 
   public function tambah()
   {	
-    /*$where = array (
-      'sha1(id_member)' => $id,
-    );
-    $data['data'] = $this->Member_model->info($where)->row();*/
     if($this->session->userdata('akses')=='1'){
-      /*$data['univ'] = $this->Member_model->getUniv();
-      $data['startup'] = $this->StartupProfile_model->getStartupName();
-      $data['fak'] = $this->Member_model->getFakultas();*/
-    $this->load->view('admin/kelola_aktivitas_tambah'/*,$data*/);
+      if (isset($_POST['submit'])){
+        $this->model_kelolaaktivitas->aktivitas_tambah();
+        redirect('kelolaaktivitas');
+      }else{
+        $this->load->view('admin/kelola_aktivitas_tambah');
+      }
     }else{
-      redirect('auth/logout');
+      redirect('dashboard/logout');
     }
   }
 
   public function ubah()
   {	
-    /*$where = array (
-      'sha1(id_member)' => $id,
-    );
-    $data['data'] = $this->Member_model->info($where)->row();*/
     if($this->session->userdata('akses')=='1'){
-      /*$data['univ'] = $this->Member_model->getUniv();
-      $data['startup'] = $this->StartupProfile_model->getStartupName();
-      $data['fak'] = $this->Member_model->getFakultas();*/
-    $this->load->view('admin/kelola_aktivitas_ubah'/*,$data*/);
+      $id = $this->uri->segment(3);
+      if (isset($_POST['submit'])) {
+        $this->model_kelolaaktivitas->update();
+        redirect('kelolaaktivitas');
+      }else{
+        $data['activity'] = $this->model_kelolaaktivitas->edit($id)->row_array();
+        $this->load->view('admin/kelola_aktivitas_ubah',$data);
+      }
     }else{
-      redirect('auth/logout');
+      redirect('dashboard/logout');
     }
+  }
+
+  function hapus(){
+    $id = $this->uri->segment(3);
+    $this->model_kelolaaktivitas->delete($id);
+    redirect('kelolaaktivitas');
   }
 
 

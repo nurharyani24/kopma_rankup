@@ -63,16 +63,6 @@ $this->load->view('inc/sidebar');
               </div>
             </div>
 
-            <!-- Form Gender -->
-            <div class="form-group">
-              <!-- label -->
-              <label for="inputGender" class="col-sm-2 control-label">Gender</label>
-              <!-- input -->
-              <div class="col-sm-9">
-                <input type="text" class="form-control" id="gender" placeholder="Gender" name="gender">
-              </div>
-            </div>
-
             <!-- Form Password -->
             <div class="form-group">
               <!-- label -->
