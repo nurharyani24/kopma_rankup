@@ -18,4 +18,11 @@ class Dashboard extends CI_Controller{
       echo "Anda tidak berhak mengakses halaman ini";
     }
   }
+
+  // function kelola_poin(){
+  //   $data['list'] = $this->model_kelolapoin->list_datauser();
+  //   $this->load->view('admin/kelola_poin',$data);
+  // }
+
+
 }
