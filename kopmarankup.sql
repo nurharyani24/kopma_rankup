@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2018 at 11:57 AM
+-- Generation Time: Nov 20, 2018 at 01:18 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -71,15 +71,20 @@ INSERT INTO `admin` (`id_admin`, `username`, `password`, `access_time`) VALUES
 CREATE TABLE `data_user` (
   `id_du` int(5) NOT NULL,
   `name` varchar(20) NOT NULL,
-  `nak` varchar(10) NOT NULL
+  `nak` varchar(10) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `data_user`
 --
 
-INSERT INTO `data_user` (`id_du`, `name`, `nak`) VALUES
-(1, 'Nur Haryani', '301111');
+INSERT INTO `data_user` (`id_du`, `name`, `nak`, `username`, `password`) VALUES
+(1, 'Nur Haryani', '301111', 'user', 'ee11cbb19052e40b07aac0ca060c23ee'),
+(3, 'Risang', '301000', 'risang', 'risang'),
+(4, 'Nuriskin', '1234567', 'nuri', ''),
+(5, 'Dina', '78908', 'dina', 'e274648aed611371cf5c30a30bbe1d65');
 
 -- --------------------------------------------------------
 
@@ -224,7 +229,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `data_user`
 --
 ALTER TABLE `data_user`
-  MODIFY `id_du` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_du` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `points`
