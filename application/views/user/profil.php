@@ -30,10 +30,7 @@ $this->load->view('inc/sidebar');
         <section class="col-lg-12 connectedSortable">
           
         <div class="box">
-            <div class="box-header with-border">
-              <h3 class="box-title"><b><!--<//?php echo $aktivitas_user['name'] ?>--></b></h3>
-            </div>
-            <!-- /.box-header -->
+            
             <div class="box-body table-responsive">
             <table class="table table-hover">
             <tr>
@@ -53,7 +50,7 @@ $this->load->view('inc/sidebar');
             </tr>
 
             <tr>
-              <td><b>Usernama</b></td>
+              <td><b>Username</b></td>
               <td><!--<//?php echo $data->nama_startup; ?>--></td>
             </tr>
             
@@ -62,11 +59,7 @@ $this->load->view('inc/sidebar');
             </div>
             <!-- /.box-body -->
 
-            <!-- /.box-body -->
-            <div class="box-footer">
-              <h3><b></b></h3>
-            </div>
-            <!-- /.box body-->
+         
           </div>
           <!-- /.box -->
 
