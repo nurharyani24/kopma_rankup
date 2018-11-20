@@ -52,6 +52,7 @@ $.widget.bridge('uibutton', $.ui.button);
 
 <!-- Membuat menu active ketika di klik -->
 <script>
+/*
 var url = window.location;
 // for sidebar menu but not for treeview submenu
 $('ul.sidebar-menu a').filter(function() {
@@ -61,4 +62,5 @@ $('ul.sidebar-menu a').filter(function() {
 $('ul.treeview-menu a').filter(function() {
     return this.href == url;
 }).parentsUntil(".sidebar-menu > .treeview-menu").siblings().removeClass('active').end().addClass('active');
+*/
 </script>
