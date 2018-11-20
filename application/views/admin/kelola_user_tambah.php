@@ -29,7 +29,7 @@ $this->load->view('inc/sidebar');
           <!-- /.box-header -->
           <div class="box-body">
           <!-- form start -->
-          <form class="form-horizontal" action="<?php echo site_url('kelolauser/save') ?>" method="post">
+          <form class="form-horizontal" action="<?php echo site_url('kelolauser/tambah') ?>" method="post">
           
           <div class="box-body">
 
@@ -62,7 +62,7 @@ $this->load->view('inc/sidebar');
                 <input type="text" class="form-control" id="username" placeholder="Username" name="username">
               </div>
             </div>
-            
+
             <!-- Form Password -->
             <div class="form-group">
               <!-- label -->
@@ -78,7 +78,7 @@ $this->load->view('inc/sidebar');
           <a href="<?php echo base_url('kelolauser/') ?>">
             <button type="button" class="btn btn-default btn-fill pull-right" style="margin-left: 5px;">Batal</button>
           </a>
-          <button type="submit" class="btn btn-primary btn-fill pull-right">Simpan</button>
+          <button type="submit" name="submit" class="btn btn-primary btn-fill pull-right">Simpan</button>
           <div class="clearfix"></div>
         </form>
           </div>

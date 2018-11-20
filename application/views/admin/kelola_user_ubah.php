@@ -13,7 +13,7 @@ $this->load->view('inc/sidebar');
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Beranda</a></li>
         <li>Kelola Data User</li>
-        <li class="active">Tambah User</li>
+        <li class="active">Edit Data User</li>
       </ol>
     </section>
 
@@ -29,7 +29,7 @@ $this->load->view('inc/sidebar');
           <!-- /.box-header -->
           <div class="box-body">
           <!-- form start -->
-          <form class="form-horizontal" action="<?php echo site_url('kelolauser/save') ?>" method="post">
+          <form class="form-horizontal" action="<?php echo site_url('kelolauser/ubah') ?>" method="post">
           
           <div class="box-body">
 
@@ -39,7 +39,10 @@ $this->load->view('inc/sidebar');
               <label for="inputNAK" class="col-sm-2 control-label">NAK</label>
               <!-- input -->
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="nak" placeholder="NAK" name="nak">
+                <?php echo
+                "<input type='hidden' name='id' value='$user[id_du]'>
+                <input type='text' class='form-control' id='nak' placeholder='NAK' name='nak' value='$user[nak]'>"
+                ?>
               </div>
             </div>
 
@@ -49,27 +52,9 @@ $this->load->view('inc/sidebar');
               <label for="inputNama" class="col-sm-2 control-label">Nama</label>
               <!-- input -->
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="nama" placeholder="Nama" name="nama">
-              </div>
-            </div>
-
-            <!-- Username -->
-            <div class="form-group">
-              <!-- label -->
-              <label for="inputUsername" class="col-sm-2 control-label">Username</label>
-              <!-- input -->
-              <div class="col-sm-9">
-                <input type="text" class="form-control" id="username" placeholder="Username" name="username">
-              </div>
-            </div>
-            
-            <!-- Form Password -->
-            <div class="form-group">
-              <!-- label -->
-              <label for="inputPassword" class="col-sm-2 control-label">Password</label>
-              <!-- input -->
-              <div class="col-sm-9">
-                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                <?php echo
+                "<input type='text' class='form-control' id='nama' placeholder='Nama' name='nama' value='$user[name]'>"
+                ?>
               </div>
             </div>
         
@@ -78,7 +63,7 @@ $this->load->view('inc/sidebar');
           <a href="<?php echo base_url('kelolauser/') ?>">
             <button type="button" class="btn btn-default btn-fill pull-right" style="margin-left: 5px;">Batal</button>
           </a>
-          <button type="submit" class="btn btn-primary btn-fill pull-right">Simpan</button>
+          <button type="submit" name="submit" class="btn btn-primary btn-fill pull-right">Simpan</button>
           <div class="clearfix"></div>
         </form>
           </div>
