@@ -92,9 +92,8 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <?php if($this->session->userdata('akses')=='1'):?><a href="<?php echo base_url().'dashboard/changepassword'?>" class="btn btn-default btn-flat">Change Password</a><?php endif;?>
-                  <?php if($this->session->userdata('akses')=='2'):?><a href="<?php echo base_url().'dashboard/changepassword'?>" class="btn btn-default btn-flat">Change Password</a><?php endif;?>
-                  <?php if($this->session->userdata('akses')=='3'):?><a href="<?php echo base_url().'dashboard/startupprofile'?>" class="btn btn-default btn-flat">Profile</a><?php endif;?>
+                  <?php if($this->session->userdata('akses')=='1'):?><a href="<?php echo base_url().'gantipassword'?>" class="btn btn-default btn-flat">Change Password</a><?php endif;?>
+                  <?php if($this->session->userdata('akses')=='2'):?><a href="<?php echo base_url().'profil'?>" class="btn btn-default btn-flat">Profile</a><?php endif;?>
                 </div>
                 <div class="pull-right">
                   <a href="<?php echo base_url().'auth/logout'?>" class="btn btn-default btn-flat">Sign out</a>
