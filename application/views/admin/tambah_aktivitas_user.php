@@ -45,7 +45,7 @@ $this->load->view('inc/sidebar');
                     <input type='hidden' name='id' value=''>
                     <tr>
                       <th width='120px' scope='row'>NAK</th>    
-                      <td><input type='text' class='form-control' name='a' readonly="<?php echo ?>" value=""></td>
+                      <td><input type='text' class='form-control' name='a'></td>
                     </tr>
                     <tr>
                       <th width='120px' scope='row'>Nama</th>    
@@ -66,10 +66,10 @@ $this->load->view('inc/sidebar');
               </div>
             </div>
             
-            <a href="<?php echo base_url('alluniv/') ?>">
+            <a href="<?php echo base_url('kelolapoin/') ?>">
               <button type="button" class="btn btn-default btn-fill pull-right" style="margin-left: 5px;">Cancel</button>
             </a>
-            <button type="submit" class="btn btn-primary btn-fill pull-right">Save</button>
+            <button type="submit" name="submi" class="btn btn-primary btn-fill pull-right">Save</button>
             <div class="clearfix"></div>
           </form>
           </div>

@@ -27,7 +27,7 @@
       <li><a href="<?php echo base_url().'kelolaaktivitas'?>"><i class="fa fa-lock"></i> <span>Kelola Aktivitas</span></a></li>
       <li><a href="<?php echo base_url().'kelolaakun'?>"><i class="fa  fa-question-circle"></i> <span>Kelola Akun</span></a></li>
       <li><a href="<?php echo base_url().'gantipassword'?>"><i class="fa  fa-question-circle"></i> <span>Ganti Password </span></a></li>
-      <li><a href="<?php echo base_url().'auth/logout'?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
+      <li><a href="<?php echo base_url().'dashboard/logout'?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
       <!--Akses Menu Untuk User-->
       <?php else:?>
       <li><a href="<?php echo base_url().'dashboard'?>"><i class="fa  fa-dashboard"></i> <span>Dashboard</span></a></li>
