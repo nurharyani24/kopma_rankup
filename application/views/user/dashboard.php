@@ -21,10 +21,27 @@ $this->load->view('inc/sidebar');
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
-      
-        <!-- /.box-body -->
+
+      <div class="col-lg-3 col-xs-6">
+        <!-- small box -->
+        <div class="small-box bg-aqua">
+          <div class="inner">
+            <h3>100</h3>
+
+            <p>Anggota</p>
+          </div>
+          <div class="icon">
+            <i class="ion ion-bag"></i>
+          </div>
+          <a href="<?php echo base_url('kelolauser') ?>" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+        </div>
       </div>
-      <!-- /.box -->
+      <!-- ./col -->
+   
+
+
+      </div>
+      <!-- /.row -->
     </section>
     
 
