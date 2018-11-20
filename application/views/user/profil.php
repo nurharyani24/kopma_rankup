@@ -14,11 +14,11 @@ $this->load->view('inc/sidebar');
     <!-- Main row -->
     <section class="content-header">
       <h1>
-        Kelola Poin
+        Profil
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Riwayat Poin</li>
+        <li class="active">Profil</li>
       </ol>
     </section>
 
@@ -31,43 +31,42 @@ $this->load->view('inc/sidebar');
           
         <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title"><b>Riwayat Poin</b></h3>
+              <h3 class="box-title"><b><!--<//?php echo $aktivitas_user['name'] ?>--></b></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
-            <table id="example1" class="table table-bordered table-striped">
-            <thead>
+            <table class="table table-hover">
             <tr>
-              <th><center>Aktivitas</center></th>
-              <th><center>Jabatan</center></th>
-              <th><center>Poin</center></th>
+              
+            <th style="width: 20%">FIELD</th>
+              <th>VALUE</th>
             </tr>
-            </thead>
-
-            <tbody>
-            <tr><td></td>
-              <td></td>
-              <td></td>
+            
             <tr>
-            <!--
-            <//?php 
-              $no = 1;
-              foreach ($list->result_array() as $row){
-              echo "<tr><td>$no</td>
-                    <td>$row[activity]</td>
-                    <td>$row[position]</td>
-                    <td><center>
-                      <a class='btn btn-success btn-xs' title='Edit Data' href='".base_url()."keloladatauser/detail_datauser/
-                      $row[id_du]'>
-                      <span class='glyphicon glyphicon-edit'></span></a>
-                    </tr>";
-                $no++;
-              }
-            ?>-->
-            </tfoot>
-          </table>
+              <td><b>NAK</b></td>
+              <td><!--<//?php echo $data->nama_startup; ?>--></td>
+            </tr>
+
+            <tr>
+              <td><b>Nama</b></td>
+              <td><!--<//?php echo $data->nama_startup; ?>--></td>
+            </tr>
+
+            <tr>
+              <td><b>Usernama</b></td>
+              <td><!--<//?php echo $data->nama_startup; ?>--></td>
+            </tr>
+            
+            </table>
+        
             </div>
             <!-- /.box-body -->
+
+            <!-- /.box-body -->
+            <div class="box-footer">
+              <h3><b></b></h3>
+            </div>
+            <!-- /.box body-->
           </div>
           <!-- /.box -->
 
@@ -86,10 +85,11 @@ $this->load->view('inc/sidebar');
     </section>
     <!-- /.content -->
   </div>
-
+<!-- ============================================================== -->
 <?php
   $this->load->view('inc/js');
 ?>
+
 <!-- DataTables -->
 <script type="text/javascript" src="<?php echo base_url('assets/AdminLTE/bower_components/datatables.net/js/jquery.dataTables.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') ?>"></script>
@@ -108,6 +108,7 @@ $this->load->view('inc/sidebar');
     })
   })
 </script>
+
 <?php
   $this->load->view('inc/foot');
 ?>

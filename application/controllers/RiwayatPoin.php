@@ -11,7 +11,7 @@ class RiwayatPoin extends CI_Controller{
   }
 
   function index(){
-    if($this->session->userdata('akses')=='1'){
+    if($this->session->userdata('akses')=='2'){
      // $data['list'] = $this->model_kelolapoin->list_datauser();
       $this->load->view('user/riwayat_poin');
     }else{

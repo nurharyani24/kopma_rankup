@@ -31,8 +31,8 @@
       <!--Akses Menu Untuk User-->
       <?php else:?>
       <li><a href="<?php echo base_url().'dashboard'?>"><i class="fa  fa-dashboard"></i> <span>Dashboard</span></a></li>
-      <li><a href="<?php echo base_url().'startupprofile/'?>"><i class="fa fa-info-circle"></i> <span>Profil</span></a></li>
-      <li><a href="<?php echo base_url().'riwayatpoin'?>"><i class="fa fa-users"></i> <span>Riwayat Poin</span></a></li>
+      <li><a href="<?php echo base_url().'profil'?>"><i class="fa fa-user"></i> <span>Profil</span></a></li>
+      <li><a href="<?php echo base_url().'riwayatpoin'?>"><i class="fa fa-rocket"></i> <span>Riwayat Poin</span></a></li>
       <li><a href="<?php echo base_url().'auth/Logout'?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
       <?php endif;?>
     </ul>  
