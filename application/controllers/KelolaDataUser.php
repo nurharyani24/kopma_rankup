@@ -1,5 +1,5 @@
 <?php
-class KelolaPoin extends CI_Controller{
+class kelola_datauser extends CI_Controller{
   function __construct(){
     parent::__construct();
     // panggil model kelola data user
