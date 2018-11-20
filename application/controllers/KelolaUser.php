@@ -20,26 +20,37 @@ class KelolaUser extends CI_Controller{
   public function tambah()
   {	
     if($this->session->userdata('akses')=='1'){
-      $this->load->view('admin/kelola_user_tambah'/*,$data*/);
+      if (isset($_POST['submit'])) {
+        $this->model_kelolauser->tambah();
+        redirect('kelolauser');
+      }else{
+        $this->load->view('admin/kelola_user_tambah');
+      }
     }else{
-      redirect('auth/logout');
+      redirect('dashboard/logout');
     }
   }
 
   public function ubah()
-  {	
-    /*$where = array (
-      'sha1(id_member)' => $id,
-    );
-    $data['data'] = $this->Member_model->info($where)->row();*/
+  { 
     if($this->session->userdata('akses')=='1'){
-      /*$data['univ'] = $this->Member_model->getUniv();
-      $data['startup'] = $this->StartupProfile_model->getStartupName();
-      $data['fak'] = $this->Member_model->getFakultas();*/
-    $this->load->view('admin/kelola_user_ubah'/*,$data*/);
+      $id = $this->uri->segment(3);
+      if (isset($_POST['submit'])) {
+        $this->model_kelolauser->update();
+        redirect('kelolauser');
+      }else{
+        $data['user'] = $this->model_kelolauser->edit($id)->row_array();
+        $this->load->view('admin/kelola_user_ubah',$data);
+      }
     }else{
-      redirect('auth/logout');
+      redirect('dashboard/logout');
     }
+  }
+
+  public function hapus(){
+    $id = $this->uri->segment(3);
+    $this->model_kelolauser->delete($id);
+    redirect('kelolauser');
   }
 
 
