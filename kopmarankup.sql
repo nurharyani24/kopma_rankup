@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2018 at 05:29 AM
+-- Generation Time: Nov 20, 2018 at 07:50 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -32,18 +32,6 @@ CREATE TABLE `activity` (
   `id_activity` int(5) NOT NULL,
   `activity_name` varchar(20) NOT NULL,
   `points` int(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `activity_position`
---
-
-CREATE TABLE `activity_position` (
-  `id` int(5) NOT NULL,
-  `id_activity_fk` int(5) NOT NULL,
-  `id_position_fk` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -78,6 +66,13 @@ CREATE TABLE `data_user` (
   `nak` varchar(10) NOT NULL,
   `gender` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_user`
+--
+
+INSERT INTO `data_user` (`id_du`, `name`, `nak`, `gender`) VALUES
+(1, 'Nur Haryani', '301111', 1);
 
 -- --------------------------------------------------------
 
@@ -118,6 +113,19 @@ CREATE TABLE `user` (
   `id_du_fk` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user_activity`
+--
+
+CREATE TABLE `user_activity` (
+  `id` int(5) NOT NULL,
+  `id_activity_fk` int(5) NOT NULL,
+  `id_position_fk` int(5) NOT NULL,
+  `id_du_fk` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -127,14 +135,6 @@ CREATE TABLE `user` (
 --
 ALTER TABLE `activity`
   ADD PRIMARY KEY (`id_activity`);
-
---
--- Indexes for table `activity_position`
---
-ALTER TABLE `activity_position`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_activity_fk` (`id_activity_fk`),
-  ADD KEY `id_position_fk` (`id_position_fk`);
 
 --
 -- Indexes for table `admin`
@@ -169,6 +169,15 @@ ALTER TABLE `user`
   ADD KEY `id_du_fk` (`id_du_fk`);
 
 --
+-- Indexes for table `user_activity`
+--
+ALTER TABLE `user_activity`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_activity_fk` (`id_activity_fk`),
+  ADD KEY `id_position_fk` (`id_position_fk`),
+  ADD KEY `id_du_fk` (`id_du_fk`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -177,12 +186,6 @@ ALTER TABLE `user`
 --
 ALTER TABLE `activity`
   MODIFY `id_activity` int(5) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `activity_position`
---
-ALTER TABLE `activity_position`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `admin`
@@ -194,7 +197,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `data_user`
 --
 ALTER TABLE `data_user`
-  MODIFY `id_du` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_du` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `points`
@@ -215,15 +218,14 @@ ALTER TABLE `user`
   MODIFY `id_user` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- AUTO_INCREMENT for table `user_activity`
 --
+ALTER TABLE `user_activity`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for table `activity_position`
+-- Constraints for dumped tables
 --
-ALTER TABLE `activity_position`
-  ADD CONSTRAINT `activity_position_ibfk_1` FOREIGN KEY (`id_activity_fk`) REFERENCES `activity` (`id_activity`),
-  ADD CONSTRAINT `activity_position_ibfk_2` FOREIGN KEY (`id_position_fk`) REFERENCES `position` (`id_position`);
 
 --
 -- Constraints for table `points`
@@ -236,6 +238,14 @@ ALTER TABLE `points`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_du_fk`) REFERENCES `data_user` (`id_du`);
+
+--
+-- Constraints for table `user_activity`
+--
+ALTER TABLE `user_activity`
+  ADD CONSTRAINT `user_activity_ibfk_1` FOREIGN KEY (`id_activity_fk`) REFERENCES `activity` (`id_activity`),
+  ADD CONSTRAINT `user_activity_ibfk_2` FOREIGN KEY (`id_position_fk`) REFERENCES `position` (`id_position`),
+  ADD CONSTRAINT `user_activity_ibfk_3` FOREIGN KEY (`id_du_fk`) REFERENCES `data_user` (`id_du`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

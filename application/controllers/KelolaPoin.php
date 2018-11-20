@@ -19,6 +19,24 @@ class KelolaPoin extends CI_Controller{
     }
   }
 
+  function detail_datauser(){
+    $id = $this->uri->segment(3);
+    $data['aktivitas_user'] = $this->model_kelolapoin->detail_user($id)->row_array();
+    $this->load->view('admin/detail_datauser',$data);
+  }
+
+  function tambah_aktivitasuser(){
+    if (isset($_POST['submit'])){
+      $this->model_kelolapoin->tambah_aktivitas_user();
+      $id = $this->uri->segment(4);
+      $data['aktivitas_user'] = $this->model_kelolapoin->detail_user($id)->row_array();
+      redirect('admin/detail_datauser',$data);
+    }else{
+      $this->load->view('admin/tambah_aktivitas_user');
+    }
+  }
+  
+
 
 
 }
