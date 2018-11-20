@@ -24,5 +24,12 @@ class Dashboard extends CI_Controller{
   //   $this->load->view('admin/kelola_poin',$data);
   // }
 
+  public function logout()
+  {
+        $this->session->sess_destroy();
+        //$this->cache->clean();
+        $url=base_url('');
+        redirect($url);
+  }
 
 }

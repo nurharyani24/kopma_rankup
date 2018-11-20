@@ -19,6 +19,7 @@ $this->load->view('inc/sidebar');
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Kelola Poin</li>
+        <li class="active"><?php echo $aktivitas_user['name'] ?></li>
       </ol>
     </section>
 
@@ -31,7 +32,8 @@ $this->load->view('inc/sidebar');
           
         <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title"><b>Data User</b></h3>
+              <h3 class="box-title"><b><?php echo $aktivitas_user['name'] ?></b></h3>
+              <?php if($this->session->userdata('akses')=='1'):?><a class='pull-right btn btn-primary btn-sm' href='<?php echo base_url(); ?>kelolapoin/tambah_aktivitasuser'>Tambah Aktivitas</a><?php endif;?>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
@@ -39,24 +41,26 @@ $this->load->view('inc/sidebar');
             <thead>
             <tr>
               <th style='width:40px'>No</th>
-              <th>NAK</th>
-              <th>Nama</th>
-              <th>Aksi</th>
+              <th>Aktivitas</th>
+              <th>Jabatan</th>
+              <th>Poin</th>
+              <!-- <th>Aksi</th> -->
             </tr>
             </thead>
 
             <tbody>
             <?php 
               $no = 1;
-              foreach ($list->result_array() as $row){
+              //foreach ($aktivitas_user->result_array() as $row){
               echo "<tr><td>$no</td>
-                    <td>$row[nak]</td>
-                    <td>$row[name]</td>
-                    <td><center>
-                      <a class='btn btn-success btn-xs' title='Detail' href='".base_url()."kelolapoin/detail_datauser/$row[id_du]'><span class='glyphicon glyphicon-info-sign'></span></a>
-                    </tr>";
+                    <td>$aktivitas_user[activity_name]</td>
+                    <td>$aktivitas_user[position_name]</td>
+                    <td>$aktivitas_user[position_points]</td>
+
+                    ";
+
                 $no++;
-              }
+              //}
             ?>
             </tfoot>
           </table>
