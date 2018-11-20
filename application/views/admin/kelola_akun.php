@@ -53,9 +53,7 @@ $this->load->view('inc/sidebar');
               echo "<tr>
                     <td>$row[username]</td>
                     <td><center>
-                      <a class='btn btn-fill btn-warning btn-xs' data-toggle='tooltip' data-placement='bottom' title='Ubah' href='".base_url()."kelolaakun/ubah/$row[username]'><span class='glyphicon glyphicon-edit'></span></a>
-                      <a class='btn btn-fill btn-danger btn-xs' data-toggle='tooltip' data-placement='bottom' title='Hapus' href='".base_url()."kelolaakun/hapus/$row[username]'><span class='fa fa-trash-o'></span></a>
-                    </tr>";
+                      <a class='btn btn-fill btn-warning btn-xs' data-toggle='tooltip' data-placement='bottom' title='Ubah' href='".base_url()."kelolaakun/ubah/$row[id_du]'><span class='glyphicon glyphicon-edit'></span></a>";
                 $no++;
               }
             ?>

@@ -29,7 +29,7 @@ $this->load->view('inc/sidebar');
           <!-- /.box-header -->
           <div class="box-body">
           <!-- form start -->
-          <form class="form-horizontal" action="<?php echo site_url('kelolaakun/save') ?>" method="post">
+          <form class="form-horizontal" action="<?php echo site_url('kelolaakun/ubah') ?>" method="post">
           <div class="box-body">
 
             <!-- Form Username -->
@@ -38,7 +38,9 @@ $this->load->view('inc/sidebar');
               <label for="inputUsername" class="col-sm-2 control-label">Username</label>
               <!-- input -->
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="username" name="username" disabled>
+              <?php echo
+                "<input type='text' class='form-control' id='username' name='username' value='$akun[username]' disabled >"
+              ?>
               </div>
             </div>
 
@@ -48,7 +50,9 @@ $this->load->view('inc/sidebar');
               <label for="inputNewPassword" class="col-sm-2 control-label">New Password</label>
               <!-- input -->
               <div class="col-sm-9">
-                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                <?php echo
+                "<input type='password' class='form-control' id='password' placeholder='Password' name='password' value='md5($akun[password])'>"
+                ?>
               </div>
             </div>
 
