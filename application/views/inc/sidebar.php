@@ -21,16 +21,16 @@
       
       <!--Akses Menu Untuk Admin-->
       <?php if($this->session->userdata('akses')=='1'):?>
-      <li class="active"><a href="<?php echo base_url().'dashboard'?>"><i class="fa  fa-dashboard"></i> <span>Dashboard</span></a></li>
+      <li><a href="<?php echo base_url().'dashboard'?>"><i class="fa  fa-dashboard"></i> <span>Dashboard</span></a></li>
       <li><a href="<?php echo base_url().'dashboard/evaluation'?>"><i class="fa fa-check-circle-o"></i> <span>Kelola Data User</span></a></li>
       <li><a href="<?php echo base_url().'kelolapoin'?>"><i class="fa fa-check-circle-o"></i> <span>Kelola Poin</span></a></li>
-      <li><a href="<?php echo base_url().'dashboard/kelola_aktivitas'?>"><i class="fa fa-lock"></i> <span>Kelola Aktivitas</span></a></li>
+      <li><a href="<?php echo base_url().'kelolaaktivitas'?>"><i class="fa fa-lock"></i> <span>Kelola Aktivitas</span></a></li>
       <li><a href="<?php echo base_url().'faq'?>"><i class="fa  fa-question-circle"></i> <span>Kelola Akun</span></a></li>
       <li><a href="<?php echo base_url().'faq'?>"><i class="fa  fa-question-circle"></i> <span>Ganti Password </span></a></li>
       <li><a href="<?php echo base_url().'auth/logout'?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
       <!--Akses Menu Untuk User-->
       <?php else:?>
-      <li class="active"><a href="<?php echo base_url().'dashboard'?>"><i class="fa  fa-dashboard"></i> <span>Dashboard</span></a></li>
+      <li><a href="<?php echo base_url().'dashboard'?>"><i class="fa  fa-dashboard"></i> <span>Dashboard</span></a></li>
       <li><a href="<?php echo base_url().'startupprofile/'?>"><i class="fa fa-info-circle"></i> <span>Profil</span></a></li>
       <li><a href="<?php echo base_url().'members'?>"><i class="fa fa-users"></i> <span>Riwayat Poin</span></a></li>
       <li><a href="<?php echo base_url().'auth/Logout'?>"><i class="fa fa-sign-out"></i> <span>Logout</span></a></li>
