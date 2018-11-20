@@ -45,7 +45,7 @@ $this->load->view('inc/sidebar');
                     <input type='hidden' name='id' value=''>
                     <tr>
                       <th width='120px' scope='row'>NAK</th>    
-                      <td><input type='text' class='form-control' name='a' required></td>
+                      <td><input type='text' class='form-control' name='a' readonly="<?php echo ?>" value=""></td>
                     </tr>
                     <tr>
                       <th width='120px' scope='row'>Nama</th>    
