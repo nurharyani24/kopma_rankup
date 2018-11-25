@@ -36,7 +36,7 @@ $this->load->view('inc/sidebar');
             <!-- /.box-header -->
           <div class="box-body">
           <!-- form start -->
-          <form class="form-horizontal" action="<?php echo site_url('kelolapoin/tambah_aktivitasuser') ?>" method="post">
+          <form class="form-horizontal" action="<?php echo site_url('kelolapoin/tambah_poin_user') ?>" method="post">
             <div class="box-body">
               <div class="form-group">
                 <div class='col-md-12'>
@@ -49,15 +49,15 @@ $this->load->view('inc/sidebar');
                     </tr>
                     <tr>
                       <th width='120px' scope='row'>Nama</th>    
-                      <td><input type='text' class='form-control' name='a' required></td>
+                      <td><input type='text' class='form-control' name='b' required></td>
                     </tr>
                     <tr>
                       <th width='120px' scope='row'>Aktivitas</th>    
-                      <td><input type='text' class='form-control' name='a' required></td>
+                      <td><input type='text' class='form-control' name='c' required></td>
                     </tr>
                     <tr>
                       <th width='120px' scope='row'>Jabatan</th>    
-                      <td><input type='text' class='form-control' name='a' required></td>
+                      <td><input type='text' class='form-control' name='d' required></td>
                     </tr>
                     
                   </tbody>
@@ -69,7 +69,7 @@ $this->load->view('inc/sidebar');
             <a href="<?php echo base_url('kelolapoin/') ?>">
               <button type="button" class="btn btn-default btn-fill pull-right" style="margin-left: 5px;">Cancel</button>
             </a>
-            <button type="submit" name="submi" class="btn btn-primary btn-fill pull-right">Save</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-fill pull-right">Save</button>
             <div class="clearfix"></div>
           </form>
           </div>

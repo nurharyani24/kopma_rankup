@@ -33,7 +33,7 @@ $this->load->view('inc/sidebar');
         <div class="box">
             <div class="box-header with-border">
               <h3 class="box-title"><b><?php echo $aktivitas_user['name'] ?></b></h3>
-              <?php if($this->session->userdata('akses')=='1'):?><a class='pull-right btn btn-primary btn-sm' href='<?php echo base_url(); ?>kelolapoin/tambah_aktivitasuser'>Tambah Aktivitas</a><?php endif;?>
+              <?php if($this->session->userdata('akses')=='1'):?><a class='pull-right btn btn-primary btn-sm' href='<?php echo base_url(); ?>kelolapoin/tambah_poin_user'>Tambah Aktivitas</a><?php endif;?>
             </div>
             <!-- /.box-header -->
             <div class="box-body table-responsive">
