@@ -72,6 +72,10 @@ $this->load->view('inc/sidebar');
                     </tr>
                     ";
                     ?>
+                    <tr>
+                      <th width="120px" scope="row">Poin</th> 
+                      <td><input type="text" class="form-control" name="poin"></td>
+                    </tr>
                   </tbody>
                   </table>
                   <p>

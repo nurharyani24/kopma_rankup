@@ -12,7 +12,8 @@ class Model_kelolapoin extends CI_Model{
     	$datadb = array(
             'id_activity_fk'=>$this->db->escape_str($this->input->post('activity')),
             'id_position_fk'=>$this->db->escape_str($this->input->post('jabatan')),
-            'id_du_fk'=>$this->db->escape_str($this->input->post('name'))
+            'id_du_fk'=>$this->db->escape_str($this->input->post('name')),
+            'point'=>$this->db->escape_str($this->input->post('poin'))
         );   
         $this->db->insert('user_activity',$datadb);
     }
