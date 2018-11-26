@@ -4,10 +4,10 @@ class GantiPassword extends CI_Controller{
     //call CodeIgniter's default Constructor
     parent::__construct();
     //load database libray manually
-    $this->load->database();
-    $this->load->library('session');
+    //$this->load->database();
+    //$this->load->library('session');
     //load Model
-    $this->load->helper('url');
+    //$this->load->helper('url');
     $this->load->model('Model_gantipassword');   
   } 
 
