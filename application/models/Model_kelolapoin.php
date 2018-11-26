@@ -9,10 +9,17 @@ class Model_kelolapoin extends CI_Model{
     }
 
     function tambah_poin_user($id){
-    	$datadb = array('jdl_album'=>$this->db->escape_str($this->input->post('a')));   
-        $this->db->insert('album',$datadb);
+    	$datadb = array(
+            'id_activity_fk'=>$this->db->escape_str($this->input->post('activity')),
+            'id_position_fk'=>$this->db->escape_str($this->input->post('jabatan')),
+            'id_du_fk'=>$this->db->escape_str($this->input->post('name'))
+        );   
+        $this->db->insert('user_activity',$datadb);
     }
 
+    function get_user($id){
+        return $this->db->query("SELECT * FROM data_user where id_du = '$id'");
+    }
 
 
 
