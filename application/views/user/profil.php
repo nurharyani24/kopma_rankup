@@ -41,12 +41,7 @@ $this->load->view('inc/sidebar');
             
             <tr>
               <td><b>NAK</b></td>
-              <?php
-                foreach ($data->result_array() as $row) {
-                  echo "<td>$row[nak]</td>";
-                }
-              ?>
-              
+              <td><?php echo $data->nak; ?></td>
             </tr>
 
             <tr>

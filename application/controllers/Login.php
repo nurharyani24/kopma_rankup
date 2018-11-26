@@ -18,7 +18,7 @@ class Login extends CI_Controller{
                     $data=$cek_admin->row_array();
                     $this->session->set_userdata('masuk',TRUE);
                     $this->session->set_userdata('akses','1');
-                    $this->session->set_userdata('ses_id',$data['id_admin']);
+                    $this->session->set_userdata('ses_id',$data['username']);
                     $this->session->set_userdata('ses_nama',$data['username']);
                     redirect('dashboard');
                 }else{ 
@@ -28,8 +28,8 @@ class Login extends CI_Controller{
 					$data=$cek_user->row_array();
         			$this->session->set_userdata('masuk',TRUE);
 							$this->session->set_userdata('akses','2');
-							$this->session->set_userdata('ses_id',$data['id_user']);
-							$this->session->set_userdata('ses_nama',$data['username']);
+							$this->session->set_userdata('ses_id',$data['username']);
+							$this->session->set_userdata('ses_nama',$data['name']);
 							redirect('dashboard');
 					}else{  // jika username dan password tidak ditemukan atau salah
 							$url=base_url();

@@ -1,8 +1,8 @@
 <?php
 class Model_profil extends CI_Model{
-	protected $table = 'data_user';
-
-    function user_list(){
+    protected $table = 'data_user';
+    
+    function list_user(){
         return $this->db->get($this->table);
     }
     
@@ -16,14 +16,13 @@ class Model_profil extends CI_Model{
     	$this->db->where($where);
     	return $this->db->get();
     }
+
     function getName(){
         $response = array();
         $this->db->select('*');
-        $q = $this->db->get('name');
+        $q = $this->db->get('data_user');
         $response = $q->result_array();
         return $response;
     }
-
-
    
 }
