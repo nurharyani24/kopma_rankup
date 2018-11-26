@@ -47,7 +47,7 @@ $this->load->view('inc/sidebar');
             </thead>
 
             <tbody>
-            <?php 
+            <!-- <//?php 
               $no = 1;
               foreach ($list->result_array() as $row){
               echo "<tr>
@@ -56,7 +56,15 @@ $this->load->view('inc/sidebar');
                       <a class='btn btn-fill btn-warning btn-xs' data-toggle='tooltip' data-placement='bottom' title='Ubah' href='".base_url()."kelolaakun/ubah/$row[id_du]'><span class='glyphicon glyphicon-edit'></span></a>";
                 $no++;
               }
-            ?>
+            ?> -->
+            <?php foreach ($list->result() as $row) { ?>
+            <tr>
+              <td><?php echo $row->username; ?></td>
+              <td><center>
+              <a href="<?php echo base_url('kelolaakun/ubah/'.$row->username); ?>" class="btn btn-fill btn-warning btn-xs" data-toggle="tooltip" data-placement="bottom" title="Edit"><i class="glyphicon glyphicon-edit"></i></a>
+              </center></td>
+            </tr>
+            <?php } ?>
             </tfoot>
           </table>
             </div>

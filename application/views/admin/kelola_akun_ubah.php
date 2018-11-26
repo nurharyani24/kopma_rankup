@@ -23,13 +23,13 @@ $this->load->view('inc/sidebar');
       <div class="col-md-12">
         <div class="box">
           <div class="box-header with-border">
-            <h3 class="box-title"><b>Ubah Akun</b></h3>
-            
+            <h3 class="box-title"><b>Ubah Akun</b></h3><br>
+            <?php echo $this->session->flashdata('msgPass');?>
           </div>
           <!-- /.box-header -->
           <div class="box-body">
           <!-- form start -->
-          <form class="form-horizontal" action="<?php echo site_url('kelolaakun/ubah') ?>" method="post">
+          <form class="form-horizontal" action="<?php echo site_url('kelolaakun/update') ?>" method="post">
           <div class="box-body">
 
             <!-- Form Username -->
@@ -38,9 +38,7 @@ $this->load->view('inc/sidebar');
               <label for="inputUsername" class="col-sm-2 control-label">Username</label>
               <!-- input -->
               <div class="col-sm-9">
-              <?php echo
-                "<input type='text' class='form-control' id='username' name='username' value='$akun[username]' disabled >"
-              ?>
+                <input readonly value="<?php echo $data->username; ?>" class="form-control" id="inputPassword3" placeholder="Username" name="username">
               </div>
             </div>
 
@@ -50,9 +48,7 @@ $this->load->view('inc/sidebar');
               <label for="inputNewPassword" class="col-sm-2 control-label">New Password</label>
               <!-- input -->
               <div class="col-sm-9">
-                <?php echo
-                "<input type='password' class='form-control' id='password' placeholder='Password' name='password' value='md5($akun[password])'>"
-                ?>
+                <input type="password" class="form-control" id="inputPassword3" placeholder="New Password" name="password">
               </div>
             </div>
 
@@ -62,7 +58,7 @@ $this->load->view('inc/sidebar');
               <label for="inputRetypePassword" class="col-sm-2 control-label">Re-type Password</label>
               <!-- input -->
               <div class="col-sm-9">
-                <input type="password" class="form-control" id="repass" placeholder="Re-type Password" name="repass">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Re-type Password" name="repass">
               </div>
             </div>
         
