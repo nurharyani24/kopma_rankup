@@ -12,8 +12,14 @@ class RiwayatPoin extends CI_Controller{
 
   function index(){
     if($this->session->userdata('akses')=='2'){
-     // $data['list'] = $this->model_kelolapoin->list_datauser();
-      $this->load->view('user/riwayat_poin');
+      //$data['list'] = $this->model_riwayatpoin->list_poin();
+      //$data['aktivitas_user'] = $this->model_riwayatpoin->list_poin();
+    $this->load->view('user/riwayat_poin'/*,$data*/);
+
+      //$id = $this->uri->segment(3);
+      // $data['aktivitas_user'] = $this->model_kelolapoin->detail_user($id)->row_array();
+      // $this->load->view('admin/detail_datauser',$data);
+
     }else{
       echo "Anda tidak berhak mengakses halaman ini";
     }

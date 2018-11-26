@@ -18,8 +18,7 @@ $this->load->view('inc/sidebar');
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Kelola Poin</li>
-        <li class="active"><!-- <//?php echo $aktivitas_user['name'] ?> --></li>
+        <li class="active">Riwayat Poin</li>
       </ol>
     </section>
 
@@ -31,36 +30,35 @@ $this->load->view('inc/sidebar');
         <section class="col-lg-12 connectedSortable">
           
         <div class="box">
-            <div class="box-header with-border">
-              <!-- <h3 class="box-title"><b><//?php echo $aktivitas_user['name'] ?></b></h3> -->
-            </div>
-            <!-- /.box-header -->
+            
             <div class="box-body table-responsive">
             <table id="example1" class="table table-bordered table-striped">
             <thead>
             <tr>
-              <th style='width:40px'>No</th>
-              <th>Aktivitas</th>
-              <th>Jabatan</th>
-              <th>Poin</th>
-              <!-- <th>Aksi</th> -->
+              <th><center>Aktivitas</center></th>
+              <th><center>Jabatan</center></th>
+              <th><center>Poin</center></th>
             </tr>
             </thead>
 
             <tbody>
-            <!-- <//?php 
-              $no = 1;
-              //foreach ($aktivitas_user->result_array() as $row){
-              echo "<tr><td>$no</td>
-                    <td>$aktivitas_user[activity_name]</td>
-                    <td>$aktivitas_user[position_name]</td>
-                    <td>$aktivitas_user[position_points]</td>
+            <tr><td></td>
+              <td></td>
+              <td></td>
+            <tr>
+            <?php 
+            $no = 1;
+            //foreach ($aktivitas_user->result_array() as $row){
+            echo "<tr><td>$no</td>
+                  <td>$aktivitas_user[activity_name]</td>
+                  <td>$aktivitas_user[position_name]</td>
+                  <td>$aktivitas_user[position_points]</td>
 
-                    ";
+                  ";
 
-                $no++;
-              //}
-            ?> -->
+              $no++;
+            //}
+          ?>
             </tfoot>
           </table>
             </div>
@@ -83,11 +81,10 @@ $this->load->view('inc/sidebar');
     </section>
     <!-- /.content -->
   </div>
-<!-- ============================================================== -->
+
 <?php
   $this->load->view('inc/js');
 ?>
-
 <!-- DataTables -->
 <script type="text/javascript" src="<?php echo base_url('assets/AdminLTE/bower_components/datatables.net/js/jquery.dataTables.min.js') ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/AdminLTE/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') ?>"></script>
@@ -106,7 +103,6 @@ $this->load->view('inc/sidebar');
     })
   })
 </script>
-
 <?php
   $this->load->view('inc/foot');
 ?>

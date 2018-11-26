@@ -132,4 +132,4 @@ $autoload['language'] = array();
 |
 |	$autoload['model'] = array('first_model' => 'first');
 */
-$autoload['model'] = array('model_login','model_kelolapoin','model_kelolaaktivitas','model_kelolaakun','model_kelolauser','model_profil');
+$autoload['model'] = array('model_login','model_kelolapoin','model_kelolaaktivitas','model_kelolaakun','model_kelolauser','model_profil','model_riwayatpoin','model_gantipassword');
