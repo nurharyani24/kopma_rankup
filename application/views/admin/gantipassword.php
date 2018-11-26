@@ -23,21 +23,22 @@ $this->load->view('inc/sidebar');
         <div class="box">
           <div class="box-header with-border">
             <h3 class="box-title"><b></b></h3>
-            
+            <?php echo $this->session->flashdata('msgPass');?> 
           </div>
           <!-- /.box-header -->
           <div class="box-body">
           <!-- form start -->
-          <form class="form-horizontal" action="<?php echo site_url('gantipassword/save') ?>" method="post">
+          <form class="form-horizontal" action="<?php echo site_url('gantipassword/updatepass') ?>" method="post">
           <div class="box-body">
+            
 
-            <!-- Form Username -->
+            <!-- Form Old Password -->
             <div class="form-group">
               <!-- label -->
-              <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+              <label for="inputOldPassword" class="col-sm-2 control-label">Old Password</label>
               <!-- input -->
               <div class="col-sm-9">
-                <input type="text" class="form-control" id="username" name="username" disabled>
+                <input type="password" class="form-control" id="name" placeholder="Old Password" name="oldPassword">
               </div>
             </div>
 
@@ -47,7 +48,7 @@ $this->load->view('inc/sidebar');
               <label for="inputNewPassword" class="col-sm-2 control-label">New Password</label>
               <!-- input -->
               <div class="col-sm-9">
-                <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+                <input type="password" class="form-control" id="password" placeholder="New Password" name="newPassword">
               </div>
             </div>
 
@@ -57,16 +58,13 @@ $this->load->view('inc/sidebar');
               <label for="inputRetypePassword" class="col-sm-2 control-label">Re-type Password</label>
               <!-- input -->
               <div class="col-sm-9">
-                <input type="password" class="form-control" id="repass" placeholder="Re-type Password" name="repass">
+                <input type="password" class="form-control" id="password" placeholder="Re-type Password" name="repass">
               </div>
             </div>
         
           </div>
             
-          <a href="<?php echo base_url('gantipasswword/') ?>">
-            <button type="button" class="btn btn-default btn-fill pull-right" style="margin-left: 5px;">Batal</button>
-          </a>
-          <button type="submit" class="btn btn-primary btn-fill pull-right">Simpan</button>
+          <button type="submit" class="btn btn-primary btn-fill pull-right" value="login" name="change_pass">Simpan</button>
           <div class="clearfix"></div>
         </form>
           </div>
