@@ -4,17 +4,22 @@ class Profil extends CI_Controller{
     parent::__construct();
     // panggil model kelola aktivitas
     // load->model dari ci_controller
-    // $this->load->model('model_kelolaaktivitas');
+     $this->load->model('Model_profil');
 
   }
 
   function index(){
-    if($this->session->userdata('akses')=='2'){
-      $data['list'] = $this->model_kelolauser->list_user();
-      $this->load->view('user/profil',$data);
-    }else{
-      echo "Anda tidak berhak mengakses halaman ini";
-    }
+    $username = $this->session->userdata('ses_id');
+		$where = array (
+			'username' => $username,
+		);
+		$data['data'] = $this->Model_profil->getInfo($where)->row();
+
+		if($this->session->userdata('akses')=='2'){
+			$this->load->view('user/profil',$data);
+    	}else{
+    		redirect('auth/logout');
+    	}
   }
 
 
