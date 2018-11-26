@@ -31,6 +31,8 @@ class Model_kelolauser extends CI_Model{
         $this->db->update('data_user',$datadb);
     }
 
+
+
     
 
 

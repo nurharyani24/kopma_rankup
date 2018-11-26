@@ -11,8 +11,10 @@ class Dashboard extends CI_Controller{
 
   function index(){
     if($this->session->userdata('akses')=='1'){
-      $this->load->view('admin/dashboard');
+      $data['data'] = $this->model_login->list_datauser();
+      $this->load->view('admin/dashboard',$data);
     }elseif($this->session->userdata('akses')=='2'){
+      $data['data'] = $this->model_login->list_datauser();
       $this->load->view('user/dashboard');
     }else{
       echo "Anda tidak berhak mengakses halaman ini";

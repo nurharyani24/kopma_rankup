@@ -12,4 +12,10 @@ class Model_login extends CI_Model{
 		return $query;
 	}
 
+	function list_datauser(){
+		$query=$this->db->query("SELECT data_user.*, points.* FROM data_user, points where data_user.id_du = points.id_du_fk");
+		return $query;
+	}
+
+
 }

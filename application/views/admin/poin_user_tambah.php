@@ -36,7 +36,9 @@ $this->load->view('inc/sidebar');
             <!-- /.box-header -->
           <div class="box-body">
           <!-- form start -->
-          <form class="form-horizontal" action="<?php echo site_url('kelolapoin/tambah_poin_user') ?>" method="post">
+          <?php echo
+          "<form class='form-horizontal' action='".base_url()."('kelolapoin/tambah_poin_user/$data[id_du])' method='post'>"
+          ?>
             <div class="box-body">
               <div class="form-group">
                 <div class='col-md-12'>
@@ -44,8 +46,9 @@ $this->load->view('inc/sidebar');
                   <tbody>
                     <input type='hidden' name='id' value=''>
                     <tr>
-                      <th width='120px' scope='row'>NAK</th>    
-                      <td><input type='text' class='form-control' name='a'></td>
+                    <?php echo
+                      "<th width='120px' scope='row'>NAK</th>    
+                      <td><input type='text' class='form-control' name='a' value=$data[nak]></td>
                     </tr>
                     <tr>
                       <th width='120px' scope='row'>Nama</th>    
@@ -53,15 +56,40 @@ $this->load->view('inc/sidebar');
                     </tr>
                     <tr>
                       <th width='120px' scope='row'>Aktivitas</th>    
-                      <td><input type='text' class='form-control' name='c' required></td>
+                      <td><select name='activity' class='form-control'>
+                        <option value='0' selected>- Pilih Aktivitas -</option>";
+                          foreach ($aktivitas->result_array() as $row) {
+                            echo "<option value='$row[id_activity]'>$row[activity_name]</option>";
+                          }
+                    echo     
+                      "</td>
                     </tr>
                     <tr>
                       <th width='120px' scope='row'>Jabatan</th>    
-                      <td><input type='text' class='form-control' name='d' required></td>
+                      <td><select name='jabatan' class='form-control'>
+                        <option value='0' selected>- Pilih Jabatan -</option>";
+                          foreach ($jabatan->result_array() as $row) {
+                            echo "<option value='$row[id_position]'>$row[position_name]</option>";
+
+                          }
+                    echo"
+                      </td>
                     </tr>
-                    
+                    <tr>
+                      <th width='120px' scope='row'>Poin</th>
+                      <td><input type='text' class='form-control' name='poin'></td>";
+                    echo "
+                      </td>
+                    </tr>
+                    ";
+                    ?>
                   </tbody>
                   </table>
+                  <p>
+                      Poin ketua = 15,
+                      Poin koordinator = 10,
+                      Poin anggota = 5
+                  </p>
                 </div>
               </div>
             </div>

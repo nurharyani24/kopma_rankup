@@ -25,16 +25,25 @@ class KelolaPoin extends CI_Controller{
     $this->load->view('admin/detail_datauser',$data);
   }
 
+
   function tambah_poin_user(){
-    if (isset($_POST['submit'])){
-      $this->model_kelolapoin->tambah_poin_user();
-      $id = $this->uri->segment(4);
-      $data['aktivitas_user'] = $this->model_kelolapoin->detail_user($id)->row_array();
-      redirect('admin/detail_datauser',$data);
+    if($this->session->userdata('akses')=='1'){
+      if (isset($_POST['submit'])){
+        $where = array (
+          'id_du' => $id,
+        );
+        $data['data'] = $this->model_kelolapoin->show($where)->row_array(); 
+        redirect('admin/detail_datauser',$data);
+      }else{
+        $data['aktivitas'] = $this->model_kelolaaktivitas->list_aktivitas();
+        $data['jabatan'] = $this->model_kelolaaktivitas->list_jabatan();
+        $this->load->view('admin/poin_user_tambah',$data);
+      }
     }else{
-      $this->load->view('admin/poin_user_tambah');
+      redirect('dashboard/logout');
     }
   }
+  
   
 
 

@@ -41,17 +41,22 @@ $this->load->view('inc/sidebar');
             
             <tr>
               <td><b>NAK</b></td>
-              <td><!--<//?php echo $data->nama_startup; ?>--></td>
+              <?php
+                foreach ($data->result_array() as $row) {
+                  echo "<td>$row[nak]</td>";
+                }
+              ?>
+              
             </tr>
 
             <tr>
               <td><b>Nama</b></td>
-              <td><!--<//?php echo $data->nama_startup; ?>--></td>
+              <td><?php echo $data->name; ?></td>
             </tr>
 
             <tr>
               <td><b>Username</b></td>
-              <td><!--<//?php echo $data->nama_startup; ?>--></td>
+              <td><?php echo $data->username; ?></td>
             </tr>
             
             </table>

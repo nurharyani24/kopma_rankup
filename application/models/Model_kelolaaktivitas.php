@@ -4,6 +4,10 @@ class Model_kelolaaktivitas extends CI_Model{
         return $this->db->query("SELECT * FROM activity ORDER BY activity_name DESC");
     }
 
+    function list_jabatan(){
+        return $this->db->query("SELECT * FROM position ORDER BY position_name DESC");
+    }
+
     function aktivitas_tambah(){
     	$datadb = array('activity_name'=>$this->db->escape_str($this->input->post('activity_name')));   
         $this->db->insert('activity',$datadb);
