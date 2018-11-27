@@ -14,12 +14,12 @@ $this->load->view('inc/sidebar');
     <!-- Main row -->
     <section class="content-header">
       <h1>
-        Tambah Aktivitas User
+        Tambah Poin User
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li class="active">Kelola Poin</li>
-        <li class="active">Tambah Aktivitas User</li>
+        <li class="active">Tambah Poin User</li>
       </ol>
     </section>
 
@@ -36,40 +36,61 @@ $this->load->view('inc/sidebar');
             <!-- /.box-header -->
           <div class="box-body">
           <!-- form start -->
-          <form class="form-horizontal" action="<?php echo site_url('kelolapoin/tambah_aktivitasuser') ?>" method="post">
+          
+          <form class='form-horizontal' action="<?php echo site_url('kelolapoin/tambah_poin_user')?>" method='post'>
             <div class="box-body">
               <div class="form-group">
                 <div class='col-md-12'>
                   <table class='table table-condensed table-bordered'>
                   <tbody>
                     <input type='hidden' name='id' value=''>
+                    <?php echo "
                     <tr>
-                      <th width='120px' scope='row'>NAK</th>    
-                      <td><input type='text' class='form-control' name='a' readonly="<?php echo ?>" value=""></td>
+                      <th width='120px' scope='row'>Nama</th>
+                      <td><input type='text' class='form-control' name='name' value='$user[id_du]' readonly></td>
                     </tr>
                     <tr>
-                      <th width='120px' scope='row'>Nama</th>    
-                      <td><input type='text' class='form-control' name='a' required></td>
-                    </tr>
-                    <tr>
-                      <th width='120px' scope='row'>Aktivitas</th>    
-                      <td><input type='text' class='form-control' name='a' required></td>
+                    <th width='120px' scope='row'>Aktivitas</th>    
+                    <td><select name='activity' class='form-control'>
+                      <option value='0' selected>- Pilih Aktivitas -</option>";
+                        foreach ($aktivitas->result_array() as $row) {
+                          echo "<option value='$row[id_activity]'>$row[activity_name]</option>";
+                          }
+                    echo     
+                      "</td>
                     </tr>
                     <tr>
                       <th width='120px' scope='row'>Jabatan</th>    
-                      <td><input type='text' class='form-control' name='a' required></td>
+                      <td><select name='jabatan' class='form-control'>
+                        <option value='0' selected>- Pilih Jabatan -</option>";
+                          foreach ($jabatan->result_array() as $row) {
+                            echo "<option value='$row[id_position]'>$row[position_name]</option>";
+
+                          }
+                    echo"
+                      </td>
                     </tr>
-                    
+                    ";
+                    ?>
+                    <tr>
+                      <th width="120px" scope="row">Poin</th> 
+                      <td><input type="text" class="form-control" name="poin"></td>
+                    </tr>
                   </tbody>
                   </table>
+                  <p>
+                      Poin ketua = 15,
+                      Poin koordinator = 10,
+                      Poin anggota = 5
+                  </p>
                 </div>
               </div>
             </div>
             
-            <a href="<?php echo base_url('alluniv/') ?>">
+            <a href="<?php echo base_url('kelolapoin/') ?>">
               <button type="button" class="btn btn-default btn-fill pull-right" style="margin-left: 5px;">Cancel</button>
             </a>
-            <button type="submit" class="btn btn-primary btn-fill pull-right">Save</button>
+            <button type="submit" name="submit" class="btn btn-primary btn-fill pull-right">Save</button>
             <div class="clearfix"></div>
           </form>
           </div>

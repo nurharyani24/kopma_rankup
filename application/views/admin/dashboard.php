@@ -33,8 +33,8 @@ $this->load->view('inc/sidebar');
         <!-- small box -->
         <div class="small-box bg-green">
           <div class="inner">
-            <h3>100</h3>
-
+            <?php $jml_anggota = $this->model_kelolauser->list_user()->num_rows(); ?>
+            <h3><?php echo $jml_anggota; ?></h3>
             <p>Anggota</p>
           </div>
           <div class="icon">
@@ -75,39 +75,32 @@ $this->load->view('inc/sidebar');
       <table id="example1" class="table table-bordered table-striped">
       <thead>
       <tr>
-        <th><center>Rank</center></th>
-        <th><center>NAK</center></th>
-        <th><center>Nama</center></th>
-        <th><center>Poin</center></th>
-        <th><center>Aksi</center></th>
+        <th>Rank</th>
+        <th>NAK</th>
+        <th>Nama</th>
+        <th>Total Poin</th>
       </tr>
       </thead>
 
       <tbody>
 
-      <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td><center></center></td>
-      </tr>
-      <!--
-      <//?php 
-        $no = 1;
-        foreach ($list->result_array() as $row){
-        echo "<tr>
-              <td>$row[nak]</td>
-              <td>$row[name]</td>
-              <td><center>
-                <a class='btn btn-fill btn-warning btn-xs' data-toggle='tooltip' data-placement='bottom' title='Ubah' href='".base_url()."kelolauser/ubah/$row[id_activity]'><span class='glyphicon glyphicon-edit'></span></a>
-                <a class='btn btn-fill btn-danger btn-xs' data-toggle='tooltip' data-placement='bottom' title='Hapus' href='".base_url()."kelolauser/hapus/$row[id_activity]'><span class='fa fa-trash-o'></span></a>
-              </tr>";
-          $no++;
-        }
-      ?>
-      -->
-      </tfoot>
+      
+        <?php
+          $no = 1;
+          foreach ($data->result_array() as $row) {
+            echo 
+            "<tr>
+            <td>$no</td>
+            <td>$row[nak]</td>
+            <td>$row[name]</td>
+            <td>$row[point_total]</td>
+            </tr>";  
+            $no++;
+          }   
+        ?>
+      
+      
+      </tbody>
     </table>
       </div>
       <!-- /.box-body -->
