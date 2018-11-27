@@ -29,7 +29,7 @@ class GantiPassword extends CI_Controller{
     if($this->session->userdata('akses')=='1'){
         $table = 'admin';
     }elseif ($this->session->userdata('akses')=='2') {
-        $table = 'user';
+        $table = 'data_user';
     }
     $pass = $this->model_gantipassword->getCurrPass($username,$table);
     if(md5($old_pass) == $pass->password){
